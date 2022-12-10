@@ -5,7 +5,7 @@ import Resume from '../../assets//shakil-ahmmed.pdf'
 
 const Navbar = () => {
   return (
-    <header class="sticky top-0 z-50 flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg- text-sm py-6 dark:bg-white">
+    <header class=" flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg- text-sm py-6">
       <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
         <div class="flex items-center justify-between">
           <a class="flex-none text-xl font-semibold text-gray-900 dark:text-gray-800" href="#">SHAKIL</a>
@@ -22,14 +22,15 @@ const Navbar = () => {
         </div>
         <div id="navbar-dark" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
           <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
-            <a class="font-semibold  text-gray-900 hover:text-blue-500" href="#" aria-current="page">Home</a>
-            <a class="font-semibold text-gray-900 hover:text-blue-500 dark:text-gray-500 dark:hover:text-white" href="#">
+            <a class="font-semibold  text-gray-900 hover:text-primary" href="#" aria-current="page">Home</a>
+            <a class="font-semibold text-gray-900 hover:text-primary dark:text-gray-500 dark:hover:text-white" href="#">
               Services
             </a>
-            <a class="font-semibold text-gray-900 hover:text-blue-500 dark:text-gray-500 dark:hover:text-white" href="#">Projects</a>
-            <a class="font-semibold text-gray-900 hover:text-blue-500 dark:text-gray-500 dark:hover:text-white" href="#">Skils</a>
-            <a class="font-semibold text-gray-900 hover:text-blue-500 dark:text-gray-500 dark:hover:text-white" href="#">About</a>
-            <a class="font-semibold text-gray-900 hover:text-blue-500 dark:text-gray-500 dark:hover:text-white" href="#">Contact</a>
+            <a class="font-semibold text-gray-900 hover:text-primary dark:text-gray-500 dark:hover:text-white" href="/projects">
+              Projects</a>
+            <a class="font-semibold text-gray-900 hover:text-primary dark:text-gray-500 dark:hover:text-white" href="#">Skils</a>
+            <a class="font-semibold text-gray-900 hover:text-primary dark:text-gray-500 dark:hover:text-white" href="#">About</a>
+            <a class="font-semibold text-gray-900 hover:text-primary dark:text-gray-500 dark:hover:text-white" href="#contact">Contact</a>
             <a href={Resume} class="font-semibold text-gray-900 hover:text-blue-500 dark:text-gray-500 dark:hover:text-white" download>Download Resume</a>
           </div>
         </div>
