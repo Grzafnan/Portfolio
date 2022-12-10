@@ -6,9 +6,9 @@ import { BsGithub, BsLinkedin, BsFacebook } from 'react-icons/bs';
 const Banner = () => {
   return (
     <section className=''>
-      <div className=' flex flex-col lg:flex-row  justify-center items-center py-14 px-6'>
+      <div className=' flex flex-col lg:flex-row justify-center items-center lg:justify-between py-14 px-6'>
         <div className='lg:w-1/2'>
-          <div>
+          <div className='font-[Poppins]'>
             <h1 className='text-center lg:text-start text-6xl font-bold leading-[80px]'>
               Hello!!!
               <br />
@@ -20,7 +20,7 @@ const Banner = () => {
             <p className='font-[Josefin] py-5'>
               Goal-oriented Web Developer with fast-learning ability seeking a challenging career to utilize my skills, keep
               learning and sharing. With deep understanding of JavaScript and a love for React, ready to give my best for
-              any endeavor.
+              any endeavor. Always love to learn something new. Love to get errors and handle errors.
             </p>
           </div>
           <div className='flex justify-center lg:justify-start gap-5'>
@@ -39,7 +39,6 @@ const Banner = () => {
             </a>
           </div>
         </div>
-
         <div className='hero-image jump lg:w-1/2 flex justify-center mt-10 lg:mt-0'>
           <img src={shakil} alt="" />
         </div>
