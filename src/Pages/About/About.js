@@ -8,7 +8,7 @@ const About = () => {
       <h1 className='text-6xl text-center capitalize font-bold py-10 font-[Poppins]'>About Me</h1>
       <div className='flex flex-col gap-10 lg:flex-row justify-center items-center'>
         <div>
-          <Lottie className='max-w-[500px]' animationData={about} loop={true} />
+          {/* <Lottie className='max-w-[500px]' animationData={about} loop={true} /> */}
         </div>
         <div>
           <h1 className='text-4xl font-semibold'>Shakil Ahmmed</h1>

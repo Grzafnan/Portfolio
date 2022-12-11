@@ -36,7 +36,6 @@ const Projects = () => {
     else {
       setProjectCard(projects)
     }
-
   }
 
 
@@ -45,7 +44,7 @@ const Projects = () => {
       <h1 className='text-6xl text-center capitalize font-bold py-10 font-[Poppins]'>MY PROJECTS</h1>
 
       <div>
-        <ul className='flex justify-center gap-10'>
+        <ul className='flex flex-col items-center md:flex-row justify-center gap-10'>
           {
             categories?.map(category => <li
               key={category?.id}
@@ -53,12 +52,12 @@ const Projects = () => {
               <button
                 onClick={() => handelProjects(`${category?.id}`)}
               >
-                <Link
+                <NavLink
                   // to={`/category/${category?.id}`}
-                  className='border-2 px-6 border-primary py-1.5 font-semibold hover:bg-primary hover:text-white transition-all duration-300 ease-linear'
+                  className='border-2 inline-block w-60 md:inline md:px-6 border-primary py-1.5 focus:bg-primary focus:text-white font-semibold hover:bg-primary hover:text-white transition-all duration-300 ease-linear'
                 >
                   {category?.name}
-                </Link>
+                </NavLink>
               </button>
 
             </li>)
@@ -70,26 +69,25 @@ const Projects = () => {
         <div class="py-6">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:mt-12 mt-10">
             {
-              projectCard?.map(project => <div class="card">
-                <img
-                  src={project?.image_url}
-                  alt={project?.name}
-                  className='absolute w-full h-full object-cover rounded-[15px] top-0 left-0'
-                />
-                <div class="info text-white w-full h-2/4 relative z-20 opacity-0 transform translate-y-[30px] transition duration-300 hover:opacity-100 hover:translate-y-0">
-                  <h1 className='text-xl font-semibold'>
+              projectCard?.map(project => <div
+                class="card"
+                key={project?.id}
+              >
+                <img src={project?.image_url} />
+                <div class="info">
+                  <h1 className='text-2xl font-bold '>
                     {project?.name}
                   </h1>
-                  <div className='flex justify-between'>
-                    <Link>
-                      <button className='px-4 py-1.5 border-none outline-none text-[#000] font-semibold transition duration-200 bg-white hover:bg-primary hover:text-white rounded'>
-                        Live Site
-                      </button>
-                    </Link>
-                    <Link>
-                      <button className='px-4 py-1.5 border-none outline-none text-[#000] font-semibold transition duration-200 bg-white hover:bg-primary hover:text-white rounded'>
-                        Read More
-                      </button>
+                  <div className='flex w-full gap-10 mt-10'>
+                    <a
+                      href={project?.live}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <button>Live Site</button>
+                    </a>
+                    <Link to={`project/${project?.id}`}>
+                      <button>Details</button>
                     </Link>
                   </div>
                 </div>
@@ -99,11 +97,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-
-
-
-
-    </section>
+    </section >
   );
 };
 

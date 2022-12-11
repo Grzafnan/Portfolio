@@ -13,7 +13,7 @@ const Main = () => {
 
 
   return (
-    <div>
+    <div id='home'>
       <Navbar />
       <div>
         <Outlet />
