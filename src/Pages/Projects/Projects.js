@@ -1,26 +1,66 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import './Projects.css'
+
+
 
 const Projects = () => {
-  const [categories, setCategories] = useState([])
 
-  console.log(categories);
+  const [categories, setCategories] = useState([]);
+  const [projects, setProjects] = useState();
+  const [projectCard, setProjectCard] = useState([]);
+
+  console.log(projectCard);
+
   useEffect(() => {
     fetch('categories.json')
       .then(res => res.json())
       .then(data => setCategories(data))
   }, [])
 
+  useEffect(() => {
+    fetch(`projects.json`)
+      .then(res => res.json())
+      .then(data => {
+        setProjects(data)
+        setProjectCard(data)
+      })
+  }, [])
+
+  const handelProjects = (category) => {
+    if (category !== '1') {
+      const filter = projects.filter(p => p.category_id
+        === category);
+      setProjectCard(filter)
+    }
+    else {
+      setProjectCard(projects)
+    }
+
+  }
+
 
   return (
-    <section id='projects' className='px-6'>
+    <section id='projects' className='px-6 py-14'>
       <h1 className='text-6xl text-center capitalize font-bold py-10 font-[Poppins]'>MY PROJECTS</h1>
 
       <div>
-        <ul>
+        <ul className='flex justify-center gap-10'>
           {
-            categories?.map(category => <li key={category?.id}>
-              <a>{category?.name}</a>
+            categories?.map(category => <li
+              key={category?.id}
+            >
+              <button
+                onClick={() => handelProjects(`${category?.id}`)}
+              >
+                <Link
+                  // to={`/category/${category?.id}`}
+                  className='border-2 px-6 border-primary py-1.5 font-semibold hover:bg-primary hover:text-white transition-all duration-300 ease-linear'
+                >
+                  {category?.name}
+                </Link>
+              </button>
+
             </li>)
           }
         </ul>
@@ -28,117 +68,34 @@ const Projects = () => {
 
       <div class="w-full mx-auto">
         <div class="py-6">
-          <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
-            <div class="relative">
-              <div class="absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50"><p class="text-xs leading-3 text-gray-800">New</p></div>
-              <div class="relative group">
-                <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                <img class="w-full" src="https://i.ibb.co/HqmJYgW/gs-Kd-Pc-Iye-Gg.png" alt="A girl Posing Image" />
-                <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-                  <button class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
-                  <button class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:mt-12 mt-10">
+            {
+              projectCard?.map(project => <div class="card">
+                <img
+                  src={project?.image_url}
+                  alt={project?.name}
+                  className='absolute w-full h-full object-cover rounded-[15px] top-0 left-0'
+                />
+                <div class="info text-white w-full h-2/4 relative z-20 opacity-0 transform translate-y-[30px] transition duration-300 hover:opacity-100 hover:translate-y-0">
+                  <h1 className='text-xl font-semibold'>
+                    {project?.name}
+                  </h1>
+                  <div className='flex justify-between'>
+                    <Link>
+                      <button className='px-4 py-1.5 border-none outline-none text-[#000] font-semibold transition duration-200 bg-white hover:bg-primary hover:text-white rounded'>
+                        Live Site
+                      </button>
+                    </Link>
+                    <Link>
+                      <button className='px-4 py-1.5 border-none outline-none text-[#000] font-semibold transition duration-200 bg-white hover:bg-primary hover:text-white rounded'>
+                        Read More
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
-              <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Wilfred Alana Dress</p>
-              <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1550</p>
-              <p class="font-normal dark:text-gray-300 text-base leading-4 text-gray-600 mt-4">2 colours</p>
-            </div>
-            <div class="relative">
-              <div class="bg-white bg-opacity-50 absolute top-0 right-0 px-2 py-1"><p class="text-white fonr-normal text-base leading-4">XS , S , M , L</p></div>
-              <div class="relative group">
-                <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                <img class="w-full" src="https://i.ibb.co/m6V0MzR/gs-Kd-Pc-Iye-Gg-1.png" alt="A girl wearing white suit and googgles" />
-                <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-                  <button class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
-                  <button class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button>
-                </div>
-              </div>
-              <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Wilfred Alana Dress</p>
-              <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
-            </div>
-            <div>
-              <div class="relative group">
-                <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                <img class="w-full" src="https://i.ibb.co/6g1KhhF/pexels-django-li-2956641-1.png" alt="A girl wearing dark blue suit and posing" />
-                <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-                  <button class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
-                  <button class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button>
-                </div>
-              </div>
-              <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Wilfred Alana Dress</p>
-              <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1550</p>
-              <p class="font-normal dark:text-gray-300 text-base leading-4 text-gray-600 mt-4">2 colours</p>
-            </div>
-            <div>
-              <div class="relative group">
-                <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                <img class="w-full" src="https://i.ibb.co/KLDN7Vt/gbarkz-vq-Knu-G8-Ga-Qc-unsplash.png" alt="A girl posing and wearing white suit" />
-                <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-                  <button class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
-                  <button class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button>
-                </div>
-              </div>
-
-              <p class="font-normal text-xl dark:text-white leading-5 text-gray-800 md:mt-6 mt-4">Flared Cotton Tank Top</p>
-              <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
-            </div>
-            <div>
-              <div class="relative group">
-                <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                <img class="w-full" src="https://i.ibb.co/5vxgf7V/pexels-quang-anh-ha-nguyen-884979-1.png" alt="Girl posing for an Image" />
-                <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-                  <button class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
-                  <button class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button>
-                </div>
-              </div>
-
-              <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Flared Cotton Tank Top</p>
-              <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
-            </div>
-            <div>
-              <div class="relative group">
-                <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                <img class="w-full" src="https://i.ibb.co/HKFXSrQ/pietra-schwarzler-l-SLq-x-Qd-FNI-unsplash.png" alt="A blonde girl posing" />
-                <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-                  <button class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
-                  <button class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button>
-                </div>
-              </div>
-
-              <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Wilfred Alana Dress</p>
-              <p class="font-semibold text-xl leading-5 text-gray-800 mt-4">$1550</p>
-              <p class="font-normal dark:text-gray-300 text-base leading-4 text-gray-600 mt-4">2 colours</p>
-            </div>
-            <div>
-              <div class="relative group">
-                <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                <img class="w-full" src="https://i.ibb.co/BKsqym2/tracey-hocking-ve-Zp-XKU71c-unsplash.png" alt="A girl wearing white suit posing in desert" />
-                <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-                  <button class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
-                  <button class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button>
-                </div>
-              </div>
-
-              <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Flared Cotton Tank Top</p>
-              <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
-            </div>
-            <div>
-              <div class="relative group">
-                <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                <img class="w-full" src="https://i.ibb.co/mbrk1DK/pexels-h-i-nguy-n-4034532.png" alt="Girl wearing pink suit posing" />
-                <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-                  <button class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
-                  <button class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button>
-                </div>
-              </div>
-
-              <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">Flared Cotton Tank Top</p>
-              <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">$1800</p>
-            </div>
-          </div>
-
-          <div class="flex justify-center items-center">
-            <button class="hover:bg-gray-700 dark:text-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 bg-gray-800 py-5 md:px-16 md:w-auto w-full lg:mt-28 md:mt-12 mt-10 bg-secondary text-white font-medium text-base leading-4">Load More</button>
+              )
+            }
           </div>
         </div>
       </div>
