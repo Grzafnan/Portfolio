@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
+  const [categories, setCategories] = useState([])
+
+  console.log(categories);
+  useEffect(() => {
+    fetch('categories.json')
+      .then(res => res.json())
+      .then(data => setCategories(data))
+  }, [])
+
+
   return (
-    <section className=''>
+    <section id='projects' className='px-6'>
       <h1 className='text-6xl text-center capitalize font-bold py-10 font-[Poppins]'>MY PROJECTS</h1>
 
+      <div>
+        <ul>
+          {
+            categories?.map(category => <li key={category?.id}>
+              <a>{category?.name}</a>
+            </li>)
+          }
+        </ul>
+      </div>
 
-      <div class="2xl:container 2xl:mx-auto">
-        <div class="py-6 lg:px-20 md:px-6 px-4">
+      <div class="w-full mx-auto">
+        <div class="py-6">
           <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
             <div class="relative">
               <div class="absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50"><p class="text-xs leading-3 text-gray-800">New</p></div>

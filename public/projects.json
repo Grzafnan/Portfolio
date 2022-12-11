@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "category_id": "01",
+    "name": "Aero",
+    "image_url":"https://i.ibb.co/TKXQygp/aero.png",
+    "live": "https://areo-289aa.web.app/",
+    "client": "https://github.com/Grzafnan/aero-client",
+    "server": "https://github.com/Grzafnan/aero-server",
+    "feature": [
+      "Single Page Application gives you a better experience.",
+      "Role-based Private Route Implemented (Admin, User, and Seller).",
+      "You can explore our blogs to enhance your knowledge.",
+      "Firebase Authentication with JWT Implementation.",
+      "Used React-Hook-Forms for better user experiences.",
+      "Used React Query and Axios for data fetching.",
+      "Support any device size with Responsive (mobile-friendly) Design."
+    ]
+  },
+  {
+    "id": 2,
+    "category_id": "01",
+    "name": "The Gallery",
+    "image_url":"https://i.ibb.co/ncm876t/the-gallery.png",
+    "live": "https://the-gallery-auth.web.app/",
+    "client": "https://github.com/Grzafnan/the-gallery-client",
+    "server": "https://github.com/Grzafnan/the-gallery-server",
+    "feature": [
+      "Single Page Application gives you a better experience.",
+      " 6 Main Routes Home, Services, Blogs, Login, My Reviews and Add Services.",
+      "Users can edit/delete their reviews and services.",
+      "Private Route Implemented.",
+      "Firebase Authentication with JWT Implementation for the user.",
+      "Dynamic Title Change Hooks implemented.",
+      "React-photo-view used for full zoom photo.",
+      "You can explore our blogs to enhance your knowledge."
+    ]
+  },
+  
+  {
+    "id": 3,
+    "category_id": "02",
+    "name": "Spark Learning",
+    "image_url": "https://i.ibb.co/M2SMD5y/spark.png",
+    "live": "https://clever-tree-auth.web.app/",
+    "client": "https://github.com/Grzafnan/spark-learning-client",
+    "server": "https://github.com/Grzafnan/spark-learning-server",
+    "feature": [
+      "Private Route Implemented.",
+      "Single Page Application give you better experience.",
+      "Light/Dark Mode toggle implemented and default theme will be your device preferences.",
+      "You can explore our blogs to enhance knowledge.",
+      "Firebase Authentication Implemented.",
+      "Dynamic Route For Courses and Checkout page.",
+      "You can edit your profile from edit options.",
+      "Auto Pdf downloadable button for course material."
+    ]
+  },
+  {
+    "id": 4,
+    "category_id": "02",
+    "name": "Quiz Ultra",
+    "image_url": "https://i.ibb.co/Kj2Fz69/quiz-ultra.png",
+    "live": "https://quiz-ultra-react-router.netlify.app/",
+    "client": "https://github.com/Grzafnan/quiz-ultra",
+    "feature": [
+      "This Project is About Quizzes For Some Topics.",
+      "Single Page Application give you better experience.",
+      "Here You Find Some quiz about React, Javascript, CSS, Git.",
+      "This site have 4 Main Routes (Topics, Statistics and Blog,About).",
+      "One Dynamic Route For Quizzes.",
+      "Dynamic Route For Courses and Checkout page.",
+      "You can edit your profile from edit options.",
+      "Auto Pdf downloadable button for course material."
+    ]
+  },
+  {
+    "id": 5,
+    "category_id": "03",
+    "name": "The Sun News",
+    "image_url": "https://i.ibb.co/DrrZYG7/sun-news.png",
+    "live": "https://the-sun-news-with-dynamic.netlify.app/",
+    "client": "https://github.com/Grzafnan/the-sun-news",
+    "feature": [
+      "This Project is About Newses.",
+      "Single Page Application give you better experience.",
+      "Here You Find Some quiz about React, Javascript, CSS, Git.",
+      "This site have 4 Main Routes (Topics, Statistics and Blog,About).",
+      "One Dynamic Route For Quizzes.",
+      "Dynamic Route For Courses and Checkout page.",
+      "You can edit your profile from edit options.",
+      "Auto Pdf downloadable button for course material."
+    ]
+  },
+  {
+    "id": 6,
+    "category_id": "03",
+    "name": "Choice Your Best Five",
+    "image_url": "https://i.ibb.co/kH38p45/choice-your-best-five.png",
+    "live": "https://choice-your-best-five-with-js.netlify.app/",
+    "client": "https://github.com/Grzafnan/choice-best-five",
+    "feature": [
+      "This Project is About Newses.",
+      "Single Page Application give you better experience.",
+      "Here You Find Some quiz about React, Javascript, CSS, Git.",
+      "This site have 4 Main Routes (Topics, Statistics and Blog,About).",
+      "One Dynamic Route For Quizzes.",
+      "Dynamic Route For Courses and Checkout page.",
+      "You can edit your profile from edit options.",
+      "Auto Pdf downloadable button for course material."
+    ]
+  },
+  {
+    "id": 7,
+    "category_id": "04",
+    "name": "World Cup Portfolio",
+    "image_url": "https://i.ibb.co/2nPZBdC/worldcup.png",
+    "live": "https://world-cup-portfolio-responsive.netlify.app/",
+    "client": "https://github.com/Grzafnan/world-cup-portfolio-responsive",
+    "feature": [
+      "This Project is About Newses.",
+      "Single Page Application give you better experience.",
+      "Here You Find Some quiz about React, Javascript, CSS, Git.",
+      "This site have 4 Main Routes (Topics, Statistics and Blog,About).",
+      "One Dynamic Route For Quizzes.",
+      "Dynamic Route For Courses and Checkout page.",
+      "You can edit your profile from edit options.",
+      "Auto Pdf downloadable button for course material."
+    ]
+  },
+  {
+    "id": 8,
+    "category_id": "04",
+    "name": "World Cup Portfolio",
+    "image_url": "https://i.ibb.co/ydBVL13/convention.png",
+    "live": "https://grzafnan.github.io/convention-center-responsive/",
+    "client": "https://github.com/Grzafnan/convention-center-responsive",
+    "feature": [
+      "This Project is About Newses.",
+      "Single Page Application give you better experience.",
+      "Here You Find Some quiz about React, Javascript, CSS, Git.",
+      "This site have 4 Main Routes (Topics, Statistics and Blog,About).",
+      "One Dynamic Route For Quizzes.",
+      "Dynamic Route For Courses and Checkout page.",
+      "You can edit your profile from edit options.",
+      "Auto Pdf downloadable button for course material."
+    ]
+  },
+  {
+    "id": 9,
+    "category_id": "04",
+    "name": "Penguin Fashion",
+    "image_url": "https://i.ibb.co/ydBVL13/convention.png",
+    "live": "https://grzafnan.github.io/penguin-fashion-responsive/",
+    "client": "https://github.com/Grzafnan/penguin-fashion-responsive",
+    "feature": [
+      "This Project is About Newses.",
+      "Single Page Application give you better experience.",
+      "Here You Find Some quiz about React, Javascript, CSS, Git.",
+      "This site have 4 Main Routes (Topics, Statistics and Blog,About).",
+      "One Dynamic Route For Quizzes.",
+      "Dynamic Route For Courses and Checkout page.",
+      "You can edit your profile from edit options.",
+      "Auto Pdf downloadable button for course material."
+    ]
+  }
+]

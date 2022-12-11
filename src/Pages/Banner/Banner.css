@@ -1,6 +1,4 @@
-
-
-  .hero-image {
+ .hero-image {
     max-width: 450px;
     margin: 50px 0 50px 50px;
     transform: scale(0.75) rotateY(-20deg) rotateX(25deg) translateZ(2.5rem) translateY(-50px);

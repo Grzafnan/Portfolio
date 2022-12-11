@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 const Contact = () => {
   const form = useRef();
-  console.log(process.env.REACT_APP_publicKey);
+
   const handleMessage = event => {
     event.preventDefault();
     emailjs.sendForm(`${process.env.REACT_APP_serviceId}`, `${process.env.REACT_APP_templateID}`, form.current, `${process.env.REACT_APP_publicKey}`)
@@ -21,19 +21,19 @@ const Contact = () => {
 
 
   return (
-    <section id='contact' className='flex flex-col lg:flex-row justify-between gap-10 items-center py-14 px-6'>
-      <div className='w-1/2'>
-        <div className='text-start'>
-          <h1 className='text-6xl capitalize font-bold py-10'>Contact me.</h1>
+    <section id='contact' className='flex flex-col lg:flex-row justify-between gap-10 items-center py-14 px-4'>
+      <div className='md:w-3/4 lg:w-2/4'>
+        <div className=' text-center lg:text-start'>
+          <h1 className='text-[40px] md:text-6xl capitalize font-bold py-10'>Contact me.</h1>
           <p className='font-[Josefin] text-sm'>
-            For any project / consultation / help / suggestion / working together - just message me😊
+            For any project, consultation, help, suggestion, working together - just message me😊
           </p>
           <h3 className='text-[30px] font-bold py-10'>
             Send Me A Message.
           </h3>
         </div>
-        <div className=''>
-          <form ref={form} onSubmit={handleMessage} className='flex flex-col gap-5'>
+        <div className='w-full'>
+          <form ref={form} onSubmit={handleMessage} className='flex flex-col gap-5 w-full'>
             <input type="text" name="user_name" id='name' class="py-3 px-4 block w-full bg-accent border border-darkGray rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" placeholder="Name" required />
             <input type="email" name="user_email" id="email" class="py-3 px-4 block w-full bg-accent border border-darkGray rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" placeholder="Email" />
 
@@ -48,7 +48,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className='w-1/2 jump'>
+      <div className='md:w-3/4 lg:w-2/4 jump'>
         <img src={contact} alt="" className='max-w-full lg:w-3/4' />
       </div>
 

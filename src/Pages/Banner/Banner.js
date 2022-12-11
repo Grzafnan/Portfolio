@@ -6,18 +6,17 @@ import { BsGithub, BsLinkedin, BsFacebook } from 'react-icons/bs';
 const Banner = () => {
   return (
     <section className=''>
-      <div className=' flex flex-col lg:flex-row justify-center items-center lg:justify-between py-14 px-6'>
-        <div className='lg:w-1/2'>
+      <div className=' flex flex-col lg:flex-row justify-center lg:justify-between items-center py-14 px-4'>
+        <div div className='lg:w-1/2' >
           <div className='font-[Poppins]'>
             <h1 className='text-center lg:text-start text-6xl font-bold leading-[80px]'>
               Hello!!!
               <br />
-
-              I Am <span className='bg-secondary px-2 py-0'>Shakil</span>,
-              A FrontEnd Developer
-
+              I Am <span className='bg-secondary px-2 py-0'>Shakil</span>, <span>
+                A Creative Developer
+              </span>
             </h1>
-            <p className='font-[Josefin] py-5'>
+            <p className='font-[Josefin] text-justify py-5'>
               Goal-oriented Web Developer with fast-learning ability seeking a challenging career to utilize my skills, keep
               learning and sharing. With deep understanding of JavaScript and a love for React, ready to give my best for
               any endeavor. Always love to learn something new. Love to get errors and handle errors.
@@ -38,12 +37,12 @@ const Banner = () => {
               <BsFacebook className='w-7 h-7 hover:text-primary transition-all duration-300 ease-linear' />
             </a>
           </div>
-        </div>
-        <div className='hero-image jump lg:w-1/2 flex justify-center mt-10 lg:mt-0'>
+        </div >
+        <div className='hero-image jump lg:w-1/2 mt-10 lg:mt-0'>
           <img src={shakil} alt="" />
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };
 
