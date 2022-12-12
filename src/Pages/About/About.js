@@ -1,6 +1,7 @@
 import React from 'react';
 import Lottie from "lottie-react"
 import about from '../../assets/about.json'
+import about2 from '../../assets/about2.jpg'
 
 const About = () => {
   return (
@@ -9,6 +10,7 @@ const About = () => {
       <div className='flex flex-col gap-10 lg:flex-row justify-center items-center'>
         <div>
           {/* <Lottie className='max-w-[500px]' animationData={about} loop={true} /> */}
+          <img src={about2} className='jump max-w-[500px]' alt="" />
         </div>
         <div>
           <h1 className='text-4xl font-semibold'>Shakil Ahmmed</h1>
