@@ -37,6 +37,7 @@ const Navbar = () => {
             <a class="font-semibold text-gray-900 hover:text-primary dark:text-gray-500 dark:hover:text-white" href="#skills">Skills</a>
 
             <a class="font-semibold text-gray-900 hover:text-primary dark:text-gray-500 dark:hover:text-white" href="#about">About</a>
+            <Link class="font-semibold text-gray-900 hover:text-primary dark:text-gray-500 dark:hover:text-white" to="/blogs">Blogs</Link>
             <a class="font-semibold text-gray-900 hover:text-primary dark:text-gray-500 dark:hover:text-white" href="#contact">
               Contact
             </a>
